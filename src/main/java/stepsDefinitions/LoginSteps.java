@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 
@@ -25,8 +27,8 @@ public class LoginSteps {
 
     @When("I enter valid username and password")
     public void i_enter_valid_username_and_password() {
-        loginPage.enterUsername("your_username");
-        loginPage.enterPassword("your_password");
+        loginPage.enterUsername("vayd.prakash@gmail.com");
+        loginPage.enterPassword("Void@2024");
     }
 
     @And("I click on the login button")
@@ -38,6 +40,11 @@ public class LoginSteps {
     public void i_should_be_logged_in_successfully()
     {
         // Assertions to verify successful login
+        // Locate the page heading element
+        String actualPageHeading = driver.findElement(By.xpath("//h1[contains(text(), 'Dashboard')]")).getText();
+
+        // Assert the expected page heading
+        Assert.assertEquals(actualPageHeading, "Dashboard", "Page heading is incorrect");
 
     }
 

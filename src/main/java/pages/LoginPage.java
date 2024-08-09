@@ -15,7 +15,7 @@ public class LoginPage {
     @FindBy(id = "password")
     private WebElement passwordField;
 
-    @FindBy(id = "login-button")
+    @FindBy(id = "Proceed")
     private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
@@ -24,7 +24,7 @@ public class LoginPage {
     }
 
     public void openLoginPage() {
-        driver.get("https://your-login-page-url");
+        driver.get("https://dev.smartodr.in/login");
 
     }
 
